@@ -30,6 +30,10 @@ class Interface:
 		copy(src, OUT)
 		self.is_standalone = True
 
+	def cleanup(self):
+		if self.is_standalone:
+			rmtree(self.out)
+
 def package(name: str):
 
 	# import the function we will use to "package" a compiled project
@@ -39,7 +43,9 @@ def package(name: str):
 	mkdir(path.join(OUT, name))
 	
 	# Call "package" to add the binary to the output directory
-	module.package(Interface(name))
+	interface = Interface(name)
+	module.package(interface)
+	interface.cleanup()
 
 
 def cleanup(name: str):
@@ -48,7 +54,8 @@ def cleanup(name: str):
 
 def main():
 	projects = [
-		"Electric_Field"
+		"Electric_Field",
+		"Truth_Tables"
 	]
 
 	for project in projects:
