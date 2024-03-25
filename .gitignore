@@ -36,3 +36,6 @@
 
 # Compiled Python
 **/__pycache__
+
+# Release
+/out
