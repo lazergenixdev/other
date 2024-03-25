@@ -20,7 +20,8 @@ class Interface:
 
 	def file(self, file: str):
 		src = path.join(self.name, file)
-		copy(src, self.out)
+		dst = path.join(self.out, path.basename(file));
+		copy(src, dst)
 	#	print(f"{src} file added")
 
 	def standalone(self, file: str):
@@ -54,8 +55,9 @@ def cleanup(name: str):
 
 def main():
 	projects = [
+		"Arm_Simulator",
 		"Electric_Field",
-		"Truth_Tables"
+		"Truth_Tables",
 	]
 
 	for project in projects:

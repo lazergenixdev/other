@@ -37,5 +37,21 @@
 # Compiled Python
 **/__pycache__
 
+# Visual Studio 😞
+**/.vs
+**.sln
+**.aps
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+
+# No thanks
+**.ini
+**.log
+
+# Binary and Intermediate files
+**/bin
+**/bin-int
+
 # Release
 /out
